@@ -6,7 +6,6 @@ All ML models require two text files, one containing assmebled sequences, i.e., 
 For example, sequences (here of length 33) can look like:
 
 AAACAHQLTQNHHTKRDDHESTGTGNTDLEGNR
-
 AAACDLDGTQNNQTTRTGNESARTSNVEYEDRG
 
 See common_utils.py for more details on file names, sequence length etc.
