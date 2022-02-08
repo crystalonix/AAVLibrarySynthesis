@@ -236,10 +236,23 @@ def one_hot_encode(x, features_to_encode=None):
     return z
 
 
+def one_hot_encode_column(col, one_hot_dim=None):
+    """
+    Returns the one hot representation of a col
+    :param col:
+    :param one_hot_dim: dim of one hot representation, if not provided as argument it will pick the max
+    :return:
+    """
+    if one_hot_dim is None:
+        one_hot_dim = np.max(col) - np.min(col) + 1
+    col_int = col.astype(int)
+    oh = np.eye(one_hot_dim)[col_int - np.min(col_int)]
+    return oh
+
+
 def save_model_in_pickle(file_name, model):
     with open(file_name, 'wb') as file:
         pickle.dump(model, file)
-
 
 # file_ind = 2
 # data_vol = 30000
